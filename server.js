@@ -1,13 +1,13 @@
-var http = require('http');
-var fs = require('fs');
-const express = require('express')
-const app = express()
+// var http = require('http');
+// var fs = require('fs');
+const express = require('express');
+const app = express();
 const router = express.Router();
 
-const path = require('path')
-const port = 8080
+const path = require('path');
+const port = process.env.port || 8000;
 
-// app.get('/', (req, res) => res.sendFile('index.html'));
+
 
 
 router.get('/', function(req, res) {
@@ -16,12 +16,14 @@ router.get('/', function(req, res) {
 });
 
 
-app.use('/', router);
-app.use(express.static(__dirname))
 
-app.listen(process.env.port || port);
-console.log(`Example app listening on port port! /n click here: http://localhost:${port}`)
-// app.listen(port, () => console.log(`Example app listening on port port! /n click here: http://localhost:${port}`))
+
+app.use('/', router);
+app.use(express.static(__dirname));
+app.get('/', (req, res) => res.render('index.html'));
+// console.log(`Example app listening on port port! /n click here: http://localhost:${port}`)
+
+app.listen(port, () => console.log(`Example app listening on port port! /n click here: http://localhost:${port}`))
 
 
 // fs.readFile('./index.html', function (err, html) {

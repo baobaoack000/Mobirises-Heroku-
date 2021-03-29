@@ -11,7 +11,7 @@ const port = 8080
 
 
 router.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname + '/index.html'));
+  res.sendFile(path.join(__dirname));
   //__dirname : It will resolve to your project folder.
 });
 

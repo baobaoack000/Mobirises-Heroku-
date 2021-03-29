@@ -1,2 +1,2 @@
 # Mobirises-Heroku-
-Node.js + Heroku + Express + Static File ( Mobirises)
+Node.js + Heroku + Express + Nodemon + Static File ( Mobirises)

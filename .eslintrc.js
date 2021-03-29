@@ -10,7 +10,5 @@ module.exports = {
     },
     "rules": {
     }
-    "editor.codeActionsOnSave": {
-        "source.fixAll": true
-    }
+    
 };

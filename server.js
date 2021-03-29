@@ -1,11 +1,10 @@
 // var http = require('http');
 // var fs = require('fs');
-const express = require('express');
-const app = express();
+var express = require('express');
+var app = express();
 const router = express.Router();
-
 const path = require('path');
-const port = process.env.port || 8000;
+var port = process.env.port || 8000;
 
 
 
@@ -16,11 +15,9 @@ router.get('/', function(req, res) {
 });
 
 
-
-
 app.use('/', router);
 app.use(express.static(__dirname));
-app.get('/', (req, res) => res.render('index.html'));
+app.get('/', (req, res) => res.render('index'));
 // console.log(`Example app listening on port port! /n click here: http://localhost:${port}`)
 
 app.listen(port, () => console.log(`Example app listening on port port! /n click here: http://localhost:${port}`))

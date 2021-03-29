@@ -2,9 +2,9 @@
   "name": "mobirises",
   "version": "1.0.0",
   "description": "first Heroku Transfer",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "nodemon server.js",
     "test": ""
   },
   "repository": {

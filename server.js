@@ -3,7 +3,7 @@
 var express = require('express');
 var app = express();
 
-var port = process.env.PORT || 3333;
+var port = process.env.PORT ||3333;
 
 
 
@@ -12,7 +12,7 @@ app.get("/", (request, response) => {
    response.sendFile(__dirname + "/views/index.html");
     });
   
-// app.get('/', (req, res) => res.render('index')); notworking
+// app.get('/', (req, res) => res.render('index'));notworking
 // console.log(`Example app listening on port port! /n click here: http://localhost:${port}`)
 
 app.listen(port, () => console.log(`Example app listening on port port! /n click here: http://localhost:${port}`))

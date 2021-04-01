@@ -3,20 +3,25 @@
 var express = require('express');
 var app = express();
 
-var port = process.env.PORT ||3333;
+var port = process.env.PORT;
 
 
 
 app.use(express.static(__dirname + '/'));
 app.get("/", (request, response) => {
+<<<<<<< HEAD
     response.sendFile(__dirname + "/views/index.html");
   });
 
 app.get("/", (request, response) => {
     response.sendFile(__dirname + "/views/Contact.html");
   });
+=======
+   response.sendFile(__dirname + "/views/index.html");
+    });
+>>>>>>> 3da2ee6789d22060056c075eb13f6ee9bd41a445
   
-// app.get('/', (req, res) => res.render('index'));
+// app.get('/', (req, res) => res.render('index'));notworking
 // console.log(`Example app listening on port port! /n click here: http://localhost:${port}`)
 
 app.listen(port, () => console.log(`Example app listening on port port! /n click here: http://localhost:${port}`))

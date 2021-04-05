@@ -8,14 +8,11 @@ var port = process.env.PORT ||3333;
 
 
 app.use(express.static(__dirname + '/'));
+app.use(express.static(__dirname + '/views'));
 app.get("/", (request, response) => {
-    response.sendFile(__dirname + "/views/index.html");
+    response.sendFile(__dirname + "index.html");
   });
 
-app.get("/", (request, response) => {
-    response.sendFile(__dirname + "/views/Contact.html");
-  });
-  
 // app.get('/', (req, res) => res.render('index'));
 // console.log(`Example app listening on port port! /n click here: http://localhost:${port}`)
 

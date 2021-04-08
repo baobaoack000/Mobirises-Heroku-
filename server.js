@@ -3,7 +3,31 @@
 var express = require('express');
 var app = express();
 
-var port = process.env.PORT ||3333;
+var port = process.env.PORT ||5432;
+const { Pool, Client } = require('pg')
+const pool = new Pool({
+  user: 'hsneaatxqjqfoj',
+  host: 'ec2-18-233-83-165.compute-1.amazonaws.com',
+  database: 'dbb1mo1b2j052f',
+  password: '5a2c967cc8da33e9b19ed7e402756b05b2c1aa3cd4756215fed2618e647d9351',
+  port: 5432,
+})
+pool.query('SELECT NOW()', (err, res) => {
+  console.log(err, res)
+  pool.end()
+})
+const client = new Client({
+  user: 'hsneaatxqjqfoj',
+  host: 'ec2-18-233-83-165.compute-1.amazonaws.com',
+  database: 'dbb1mo1b2j052f',
+  password: '5a2c967cc8da33e9b19ed7e402756b05b2c1aa3cd4756215fed2618e647d9351',
+  port: 5432,
+})
+client.connect()
+client.query('SELECT NOW()', (err, res) => {
+  console.log(err, res)
+  client.end()
+})
 
 
 app.use(express.static(__dirname + '/'));
